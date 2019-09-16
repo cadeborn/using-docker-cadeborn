@@ -49,9 +49,29 @@
     <td><a href="mailto:madeupemail@gmail.com">madeupemail@gmail.com</a></td>
   </tr>
 </table>
+
+<div class="row">
+      <div id="mainContent" class="col-md">Registration form</div>
+      <div id="user_generator_app" class="col-md-4 queueView">
+        <div class="patientWaiting patient"
+        :class="patient.priority + 'Priority'"
+        v-for="user in users">
+          Arrival:<br>
+          <span class="patientName">{{ user.results.name.last }}</span>,
+          <span class="patientName">{{ user.name.first }}</span>
+          <span class="patientName">{{ user.location.state }}</span>
+          <span class="patientName">{{ user.dob.date }}</span>
+          <span class="patientName">{{ user.dob.age }}</span>
+          <span class="patientName">{{ user.email }}</span><br>
+        </div>
+      </div>
+    </div>
+
 <footer>
   Cade Born Designs, 2019.
 </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/user_generator.js"></script>
 </body>
 </html>
